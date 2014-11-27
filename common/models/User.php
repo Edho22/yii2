@@ -88,13 +88,6 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
-    /* Your model attribute labels */
-        public function attributeLabels()
-        {
-        return [
-        /* Your other attribute labels */
-        ];
-        }
     /**
      * @inheritdoc
      */
