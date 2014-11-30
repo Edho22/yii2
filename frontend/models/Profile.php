@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use yii\db\ActiveRecord;
 use Yii;
 use common\models\User;
 use yii\helpers\Url;
