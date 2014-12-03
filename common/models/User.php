@@ -15,6 +15,7 @@ use backend\models\Status;
 use backend\models\UserType;
 use yii\helpers\Url;
 use yii\helpers\Html;
+use frontend\models\Profile;
 
 /**
  * User model

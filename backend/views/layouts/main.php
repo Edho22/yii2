@@ -4,11 +4,14 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use common\models\ValueHelpers;
+use backend\assets\FontAwesomeAsset;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 AppAsset::register($this);
+FontAwesomeAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -24,25 +27,43 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
-            NavBar::begin([
-                'brandLabel' => 'My Company',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
+        $is_admin = ValueHelpers::getRoleValue('Admin');
+        
+        if (!Yii::$app->user->isGuest){
+			NavBar::begin([
+				'brandLabel' => 'Yii 2 Build <i class="fa fa-plug"></i> Admin',
+				'brandUrl' => Yii::$app->homeUrl,
+				'options' => [
+				'class' => 'navbar-inverse navbar-fixed-top',
+				],
+			]);
+		} else {
+			NavBar::begin([
+				'brandLabel' => 'Yii 2 Build <i class="fa fa-plug"></i>',
+				'brandUrl' => Yii::$app->homeUrl,
+				'options' => [
+				'class' => 'navbar-inverse navbar-fixed-top',
+				],
+			]);
+		}
+            
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
             ];
-            if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            } else {
-                $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
+            if (!Yii::$app->user->isGuest && Yii::$app->user->identity->role_id >= $is_admin) {
+                $menuItems[] = ['label' => 'Users', 'url' => ['user/index']];
+				$menuItems[] = ['label' => 'Profiles', 'url' => ['profile/index']];
+				$menuItems[] = ['label' => 'Roles', 'url' => ['/role/index']];
+				$menuItems[] = ['label' => 'User Types', 'url' => ['/user-type/index']];
+				$menuItems[] = ['label' => 'Statuses', 'url' => ['/status/index']];
             }
+            
+            if (Yii::$app->user->isGuest) {
+				$menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+			} else {
+				$menuItems[] = ['label' => 'Logout (' . Yii::$app->user->identity->username .')' ,'url' => ['/site/logout']];
+			}
+            
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
@@ -60,7 +81,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Yii2 Build <?= date('Y') ?></p>
         <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
