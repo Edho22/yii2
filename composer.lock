@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "adf8222e32b37d3c600a4ae327b40d29",
+    "hash": "07f7acacbf0e20c21ce87b6adfa16c26",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -410,6 +410,62 @@
             "time": "2014-08-26 16:36:44"
         },
         {
+            "name": "fxp/composer-asset-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/francoispluchino/composer-asset-plugin.git",
+                "reference": "27ebc2927f9932877b35d6bccafc9afc228bbf6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/27ebc2927f9932877b35d6bccafc9afc228bbf6b",
+                "reference": "27ebc2927f9932877b35d6bccafc9afc228bbf6b",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0@dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Fxp\\Composer\\AssetPlugin\\FxpAssetPlugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fxp\\Composer\\AssetPlugin\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Pluchino",
+                    "email": "francois.pluchino@gmail.com"
+                }
+            ],
+            "description": "NPM/Bower Dependency Manager for Composer",
+            "homepage": "https://github.com/francoispluchino/composer-asset-plugin",
+            "keywords": [
+                "asset",
+                "bower",
+                "composer",
+                "dependency manager",
+                "nodejs",
+                "npm",
+                "package"
+            ],
+            "time": "2014-12-02 19:08:12"
+        },
+        {
             "name": "kartik-v/yii2-social",
             "version": "dev-master",
             "source": {
@@ -514,12 +570,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "7d915a65b12db5a5c15cfd9bbdf9432178f75e4a"
+                "reference": "9657695fddd00479664667d285e93339dc2401ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/7d915a65b12db5a5c15cfd9bbdf9432178f75e4a",
-                "reference": "7d915a65b12db5a5c15cfd9bbdf9432178f75e4a",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/9657695fddd00479664667d285e93339dc2401ff",
+                "reference": "9657695fddd00479664667d285e93339dc2401ff",
                 "shasum": ""
             },
             "require": {
@@ -594,7 +650,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-12-02 03:23:26"
+            "time": "2014-12-03 15:07:09"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -831,7 +887,7 @@
             ],
             "authors": [
                 {
-                    "name": "François Zaninotto"
+                    "name": "Francois Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
@@ -1021,12 +1077,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "2b70572409c3953b8a9ab573e96cd25fd5881a84"
+                "reference": "cff5540c15262c6eaaa3158184f3bbe0b38ab71f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/2b70572409c3953b8a9ab573e96cd25fd5881a84",
-                "reference": "2b70572409c3953b8a9ab573e96cd25fd5881a84",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/cff5540c15262c6eaaa3158184f3bbe0b38ab71f",
+                "reference": "cff5540c15262c6eaaa3158184f3bbe0b38ab71f",
                 "shasum": ""
             },
             "require": {
@@ -1062,7 +1118,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2014-10-25 12:30:03"
+            "time": "2014-12-03 14:52:56"
         },
         {
             "name": "yiisoft/yii2-jui",
