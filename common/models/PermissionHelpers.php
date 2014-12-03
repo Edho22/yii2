@@ -42,10 +42,11 @@ Class PermissionHelpers
     */
     public static function requireUpgradeTo($user_type_name)
     {
-        if ( Yii::$app->user->identity->user_type_id != ValueHelpers::getUserTypeValue($user_type_name)) {
-        return Yii::$app->getResponse()->redirect(Url::to(['upgrade/index']));
+        if ( Yii::$app->user->identity->user_type_id != ValueHelpers::getUserTypeValue($user_type_name)) 
+        {
+			return Yii::$app->getResponse()->redirect(Url::to(['upgrade/index']));
         }
-        }
+    }
         /**
         * @requireStatus
         * used two lines for if statement to avoid word wrapping
